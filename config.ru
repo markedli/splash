@@ -1,2 +1,2 @@
-require 'landingpad'
+require './landingpad'
 run LandingPad
