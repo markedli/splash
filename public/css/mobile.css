@@ -1,0 +1,36 @@
+.row, .body, .container {
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+	width: auto;
+	float: none;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+/* Type presets */
+body {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+/* small fixes */
+#nav ul{	margin-right: 20px !important;	}
+#footer-content, #header-content {
+	margin-right: 20px !important;
+	margin-left: 20px !important;
+}
+
+/* Making Projects list more interesting */
+#alpha ul{
+	float: left;
+	margin: 0 0 0 5%;
+	width: 45%;
+}

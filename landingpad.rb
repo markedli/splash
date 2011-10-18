@@ -14,19 +14,6 @@ class LandingPad < Sinatra::Base
     $admin_acct_name = 'admin'   
     $admin_acct_passwd = 'admin'
     
-    # Page settings - used to configure your landing page
-    $page_title = 'LandingPad.rb | Just add water landing pages'
-    $app_title = 'LandingPad.rb'
-    $app_summary = 'Get a page up and running in minutes and 
-                    start collecting contacts immediately!'
-    #your google analyics tracking key, if applicable
-    $google_analyics_key = 'UA-XXXXXX-X' 
-
-    $bg_color = '#2B2F3D'
-    $app_title_color = '#FFFFFF'
-    #see http://code.google.com/webfonts for available fonts
-    $app_title_font = 'Philosopher'
-
     # Database settings - do NOT change these
     uri = URI.parse(ENV['MONGOHQ_URL'])
     conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
@@ -60,12 +47,13 @@ class LandingPad < Sinatra::Base
 
   post '/subscribe' do
     content_type :json
-    contact = params[:contact]
+    email = params[:email]
     contact_type = contact.start_with?("@") ||
                   !contact.include?("@") ? "Twitter" : "Email"
 
     doc = {
-      "name"    => contact,
+      "name"    => params[:name],
+      "contact" => contact,
       "type"    => contact_type,
       "referer" => request.referer,
     }

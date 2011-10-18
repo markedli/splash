@@ -1,29 +1,39 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title><%= $page_title %></title>
-  <script type="text/javascript" src="javascripts/jquery-1.4.4.min.js"></script>
-  <script type="text/javascript" src="javascripts/jquery-ui-1.8.9.custom.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=<%= $app_title_font %>">
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">UTF<meta name="description" content="markedli - bookmarks" />
+  <meta name="keywords" content="markedli, marked.li, markedli.com, " />
+  <meta nameme="author" content="marked.li" />
+  <title>marked.li</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/grid.css" type="text/css" media="stylesheetcreen" />
+  <link rel="stylesheet" href="css/interim.css" type="text/css" media="screen" />
+
+  <script type="text/javascript" src="javascripts/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="javascripts/markedli.js"></script>
+  <noscript><style type="text/css">#signup .formhint{color:color#000000 !important;}</style></noscript>
+
   <script type="text/javascript">
   $(document).ready(function(){
     $("#sign_up").click(function(e){
       var that = $(this);
       e.preventDefault();
 
-      if ( $('#subscribe').attr('submitted') ){
+      if ( $('#signup').attr('submitted') ){
         return;
       }
 
-      if ( $('.entry').val().length < 1 ){
-        $('#form_div').effect('shake', { times: 4, distance: 3}, 40);
+      if ( $('.textinput').val().length < 1 ){
+        $('.holder').effect('shake', { times: 4, distance: 3}, 40);
         return;
       }
 
       $.ajax({
         type: 'post',
         url: '/subscribe',
-        data: $('#subscribe').serialize(),
+        data: $('#signup').serialize(),
         datatype: 'json',
         success: function(data){
           $("<div class='thanks'>Thanks! We'll update you through " + 
@@ -32,8 +42,8 @@
               .appendTo('#container')
               .slideDown('fast');
 
-          $('.sign_up').attr('disabled', true);
-          $('#subscribe').attr('submitted', true);
+          $('.textinput').attr('disabled', true);
+          $('#signup').attr('submitted', true);
         },
         error: function(data){
           $("<div class='yikes'>Yikes! Something messed up, try again.</div>")
@@ -46,34 +56,44 @@
   });
 </script>
 </head>
-<body style="background-color:<%= $bg_color %>;">
-  <div id="container">
-    <h1 style="color:<%= $app_title_color %>; font-family:<%= $app_title_font %>,serif">
-      <%= $app_title %>
-    </h1>
-    <div class="box">
-      <h2><%= $app_summary %></h2>
-      <h3>Enter your email or Twitter and we'll tell you when it's ready.</h3>
-      <div id="form_div">
-        <form id="subscribe" novalidate>
-          <input class="entry" type="email" name="contact" />
-          <button id="sign_up">Sign up</button>
-        </form>
-      </div>
-      <h4>Powered by <a href="http://heroku.com/">Heroku</a> and <a href="http://mongohq.com">MongoHQ</a></h4>
+
+<div id="wrap" class="container">
+  <div class="row title">
+    <div class="fourcol">&nbsp;</div>
+    <div class="fourcol">
+      <h1 class="rowlogo hidetext">marked.li</h1>
     </div>
+    <div class="fourcol">&nbsp;</div>
+
   </div>
-</body>
+  <div class="row blurb">
+    <div class="fourcol">&nbsp;</div>
+      <div class="fourcol">
+        Coming soon. <a href="mailto:re.markedlii+questions&#64;gmail.com">Got questions?</a>
+        <!-- News & updates attr <a href="#">the blog</a>.-->
+      </div>
+      <div class="fourcol">&nbsp;</div>
 
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', <%= $google_analytics_key %>]);
-  _gaq.push(['_trackPageview']);
+    </div>
+    <div class="row signup">
+      <div class="fourcol">&nbsp;</dataiv>
+      <div class="fourcol">
+      <div>Sign up for email updates:</div>
+    <div>
+    <form id="signup">
+      <div class="holder">
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+        <input id="signup_name" class="textinput formhint" type="text" name="name" placeholder="Your Name" title="Your Name" value="Your Name" />
+      </div>
+      <div class="holder">
+        <input id="signup_email" class="textinput formhint" type="text" name="email" placeholder="Email, i.e. me@example.com" title="Email, i.e. me@example.com" value="Email, i.e. me@example.com" />
+      </div>
+      <div class="holder">
+        <input class="submit" type="submit" value="Sign up">
+      </div>
+    </form>
+
+  </div>
+</div>
+<div class="fastourcol">&nbsp;</div>
 </html>

@@ -1,0 +1,73 @@
+/* Base 
+***************** */
+body{
+	background: #ffffff;
+	color:#333333;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;;
+	font-size: .9em;
+	line-height: 1.5em;
+	-webkit-text-size-adjust: none; /* stops iPhone nonsense */
+}
+
+/* formatting */
+h1{
+	font-size:3em;
+	line-height:1.5em;
+	font-weight:bold;
+	color:#046466;
+	text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+a{
+	color:#046466;
+	text-decoration:underline;
+}
+a:hover{
+	color:#96521d;
+	text-decoration:none;
+}
+
+strong{
+	font-weight:bold;
+	color:#96521d;
+}
+/* lists */
+ul, li { display:inline; }
+
+/* Layout
+***************** */
+#header{
+	background:#e0e4cc;
+	border-bottom: 5px solid #f38630;
+}
+#header #title{ padding: 1em 0; }
+#header #signin{ padding:1em 0; }
+#signin .input{
+	font-size: 13px;
+	padding: 3px 6px;
+	width: 105px;
+}
+
+#main{
+	padding-bottom:1em;
+}
+#main #alpha{
+	padding:1em 2em;
+}
+
+#nav-footer{
+	padding: 0 2em;
+}
+#nav-footer li {
+	padding-right: 1em;
+}
+/* Modules
+***************** */
+
+/* State
+***************** */
+.hidetext{
+	overflow: hidden;
+	text-indent: -3000px;
+	white-space: nowrap;
+}

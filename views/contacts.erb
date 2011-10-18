@@ -1,8 +1,9 @@
 <html>
 <head>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/interim.css" type="text/css" media="screen" />
 </head>
-<body style="background-color:<%= $bg_color %>">
   <div id="container">
     <div class="box">
       <h2>Logged Contacts</h2>
@@ -10,6 +11,7 @@
       <table cellpadding="10px">
         <thead class="even">
           <td class="table-name">Name</td>
+          <td class="table-name">Contact</td>
           <td class="table-type">Type</td>
           <td class="table-referer">Referer URL</td>
         </thead>
@@ -17,6 +19,7 @@
           <% row_class = i%2 == 0 ? "even" : "odd" %> 
           <tr class="<%= row_class %>">
             <td class="table-name"><%= contact['name'] %></td>
+            <td class="table-name"><%= contact['contact'] %></td>
             <td class="table-type"><%= contact['type'] %></td>
             <td class="table-referer"><%= contact['referer'] %></td>
           </tr>
