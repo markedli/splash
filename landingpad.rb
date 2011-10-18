@@ -47,7 +47,7 @@ class LandingPad < Sinatra::Base
 
   post '/subscribe' do
     content_type :json
-    email = params[:email]
+    contact = params[:email]
     contact_type = contact.start_with?("@") ||
                   !contact.include?("@") ? "Twitter" : "Email"
 
