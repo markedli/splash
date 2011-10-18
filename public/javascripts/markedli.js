@@ -43,7 +43,7 @@ $(document).ready(function(){
       $.ajax({
         type: 'post',
         url: '/subscribe',
-        data: $('#signup').serialize(),
+        data: $('#form-signup').serialize(),
         datatype: 'json',
         success: function(data){
           $("<div id=\"thanks\" class=\"twelvecol centered\">Thanks! We'll update you through " + 
