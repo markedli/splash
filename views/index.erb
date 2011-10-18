@@ -1,101 +1,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="markedli - bookmarks" />
-  <meta name="keywords" content="markedli, marked.li, markedli.com, " />
-  <meta nameme="author" content="marked.li" />
-  <title>marked.li</title>
-  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="markedli - bookmarks" />
+	<meta name="keywords" content="markedli, marked.li, markedli.com, " />
+	<meta name="author" content="marked.li" />
 
-  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="css/grid.css" type="text/css" media="stylesheetcreen" />
-  <link rel="stylesheet" href="css/interim.css" type="text/css" media="screen" />
+	<title>marked.li</title>
 
-  <script type="text/javascript" src="javascripts/jquery-1.6.4.min.js"></script>
-  <script type="text/javascript" src="javascripts/markedli.js"></script>
-  <noscript><style type="text/css">#signup .formhint{color:color#000000 !important;}</style></noscript>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $("#sign_up").click(function(e){
-      var that = $(this);
-      e.preventDefault();
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/interim.css" type="text/css" media="screen" />
 
-      if ( $('#signup').attr('submitted') ){
-        return;
-      }
+	<script type="text/javascript" src="javascripts/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="javascripts/markedli.js"></script>
+	<noscript><style type="text/css">#signup .formhint{color:#000000 !important;}</style></noscript>
 
-      if ( $('.textinput').val().length < 1 ){
-        $('.holder').effect('shake', { times: 4, distance: 3}, 40);
-        return;
-      }
-
-      $.ajax({
-        type: 'post',
-        url: '/subscribe',
-        data: $('#signup').serialize(),
-        datatype: 'json',
-        success: function(data){
-          $("<div class='thanks'>Thanks! We'll update you through " + 
-            data.type + "!</div>")
-              .hide()
-              .appendTo('#container')
-              .slideDown('fast');
-
-          $('.textinput').attr('disabled', true);
-          $('#signup').attr('submitted', true);
-        },
-        error: function(data){
-          $("<div class='yikes'>Yikes! Something messed up, try again.</div>")
-              .hide()
-              .appendTo('#container')
-              .slideDown('fast');
-        },
-      });
-    });
-  });
-</script>
 </head>
 <body>
 <div id="wrap" class="container">
-  <div class="row title">
-    <div class="fourcol">&nbsp;</div>
-    <div class="fourcol">
-      <h1 class="logo hidetext">marked.li</h1>
-    </div>
-    <div class="fourcol">&nbsp;</div>
-  </div>
-  <div class="row blurb">
-    <div class="fourcol">&nbsp;</div>
-    <div class="fourcol">
-      Coming soon. <a href="mailto:re.markedlii+questions&#64;gmail.com">Got questions?</a>
-      <!-- News & updates attr <a href="#">the blog</a>.-->
-    </div>
-    <div class="fourcol">&nbsp;</div>
-  </div>
-  <div class="row signup">
-    <div class="fourcol">&nbsp;</div>
-    <div class="fourcol">
+	<div class="row title">
+			<h1 class="logo hidetext">marked.li</h1>
+	</div>
+	<div class="row blurb">
+		<div class="fourcol">&nbsp;</div>
+		<div class="fourcol centered">
+			Coming soon. <a href="mailto:re.markedli+questions&#64;gmail.com">Got questions?</a>
+			<!-- News & updates at <a href="#">the blog</a>.-->
+		</div>
+		<div class="fourcol">&nbsp;</div>
+	</div>
+	<div class="row signup">
+		<div class="fourcol">&nbsp;</div>
+		<div class="fourcol">
 			<div id="signup">
-        <div>Sign up for email updates:</div>
-        <div>
-          <form id="signup">
-            <div class="holder">
-              <input id="signup_name" class="textinput formhint" type="text" name="name" placeholder="Your Name" title="Your Name" value="Your Name" />
-            </div>
-            <div class="holder">
-              <input id="signup_email" class="textinput formhint" type="text" name="email" placeholder="Email, i.e. me@example.com" title="Email, i.e. me@example.com" value="Email, i.e. me@example.com" />
-            </div>
-            <div class="holder">
-              <input class="submit" type="submit" value="Sign up">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="fourcol">&nbsp;</div>
-  </div>
+				<div>Sign up for email updates:</div>
+				<div>
+					<form id="form-signup">
+						<div class="holder">
+							<input id="signup_name" class="textinput formhint" type="text" name="name" placeholder="Your Name" title="Your Name" value="Your Name" />
+						</div>
+						<div class="holder">
+							<input id="signup_email" class="textinput formhint" type="text" name="email" placeholder="Email, i.e. me@example.com" title="Email, i.e. me@example.com" value="Email, i.e. me@example.com" />
+						</div>
+						<div class="holder">
+							<input class="submit" type="submit" value="Sign up">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="fourcol">&nbsp;</div>
+	</div>
 </div>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
