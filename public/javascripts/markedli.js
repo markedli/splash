@@ -17,11 +17,6 @@ $(document).ready(function(){
 		}
 	});
 
-/*	$('INPUT.formhint, TEXTAREA.formhint').each(function(){
-		if($(this).attr('title') == ''){ return; }
-		if($(this).val() == ''){ $(this).val($(this).attr('title')); }
-		else { $(this).removeClass('formhint'); }
-	});*/
 	/* clear the form of default text on submit */
 	$('form').submit(function(){
 		$('.formhint').each(function(){
@@ -30,4 +25,42 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+/* signup form stuff */
+	$("#sign_up").click(function(e){
+      var that = $(this);
+      e.preventDefault();
+
+      if ( $('#signup').attr('submitted') ){
+        return;
+      }
+
+      if ( $('.textinput').val().length < 1 ){
+        $('.holder').effect('shake', { times: 4, distance: 3}, 40);
+        return;
+      }
+
+      $.ajax({
+        type: 'post',
+        url: '/subscribe',
+        data: $('#signup').serialize(),
+        datatype: 'json',
+        success: function(data){
+          $("<div id=\"thanks\" class=\"twelvecol centered\">Thanks! We'll update you through " + 
+            data.type + "!</div>")
+              .hide()
+              .appendTo('.signup')
+              .slideDown('fast');
+
+          $('.textinput').attr('disabled', true);
+          $('#signup').attr('submitted', true);
+        },
+        error: function(data){
+          $("<div id=\"yikes\" class=\"twelvecol centered\">Yikes! Something messed up, try again.</div>")
+              .hide()
+              .appendTo('.signup')
+              .slideDown('fast');
+        },
+      });
+    });
 });
