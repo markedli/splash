@@ -29,28 +29,29 @@ a:hover{
 ***************** */
 .title{ margin-top:50px; }
 
-.logo{
-	background: url("../images/logo.png") no-repeat 0 0;
-	width:667px;
-}
+.logo{ background: url("../images/logo.png") no-repeat top center; }
 
 .blurb, .signup { margin-top:20px; }
 
-#signup .holder{
-	margin-bottom:2px;
+.centered { text-align:center; }
+
+#signup{
+	margin: 0 auto;
+	width:200px;
 }
 
-#signup input{
+#form-signup .holder{
+	margin-bottom:2px;
 }
-#signup .textinput{
+#form-signup .textinput{
 	font-size: 1em;
 	padding: 3px 6px;
 	width: 200px;
 	margin:2px;
 	color:#000000;
 }
-#signup .formhint{ color:#aaaaaa; }
-#signup .submit{
+#form-signup .formhint{ color:#aaaaaa; }
+#form-signup .submit{
 	margin:2px;
 	padding: 3px 6px;
 	border:1px solid #046466;
@@ -59,8 +60,9 @@ a:hover{
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	text-align:center;
 }
-#signup .submit:hover{
+#form-signup .submit:hover{
 	-webkit-box-shadow: inset 1px 1px 1px 1px rgba(255, 255, 255, .1);
 	-moz-box-shadow: inset 1px 1px 1px 1px rgba(255, 255, 255, .1);
 	box-shadow: inset 1px 1px 1px 1px rgba(255, 255, 255, .1);
