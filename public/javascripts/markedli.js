@@ -27,7 +27,7 @@ $(document).ready(function(){
 	});
 	
 /* signup form stuff */
-	$("#submit").click(function(e){
+	$(".submit").click(function(e){
       var that = $(this);
       e.preventDefault();
 
