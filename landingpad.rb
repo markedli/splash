@@ -11,8 +11,8 @@ class LandingPad < Sinatra::Base
 
   configure do
     # Admin settings - used to access contacts
-    $admin_acct_name = 'admin'   
-    $admin_acct_passwd = 'admin'
+    $admin_acct_name = ENV['ADMIN_LOGIN']
+    $admin_acct_passwd = ENV['ADMIN_PASS']
     
     # Database settings - do NOT change these
     uri = URI.parse(ENV['MONGOHQ_URL'])

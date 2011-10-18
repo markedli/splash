@@ -1,0 +1,41 @@
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#sign_up").click(function(e){
+      var that = $(this);
+      e.preventDefault();
+
+      if ( $('#signup').attr('submitted') ){
+        return;
+      }
+
+      if ( $('.textinput').val().length < 1 ){
+        $('.holder').effect('shake', { times: 4, distance: 3}, 40);
+        return;
+      }
+
+      $.ajax({
+        type: 'post',
+        url: '/subscribe',
+        data: $('#signup').serialize(),
+        datatype: 'json',
+        success: function(data){
+          $("<div class='thanks'>Thanks! We'll update you through " + 
+            data.type + "!</div>")
+              .hide()
+              .appendTo('#container')
+              .slideDown('fast');
+
+          $('.textinput').attr('disabled', true);
+          $('#signup').attr('submitted', true);
+        },
+        error: function(data){
+          $("<div class='yikes'>Yikes! Something messed up, try again.</div>")
+              .hide()
+              .appendTo('#container')
+              .slideDown('fast');
+        },
+      });
+    });
+  });
+  </script>
