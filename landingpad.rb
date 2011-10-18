@@ -19,8 +19,6 @@ class LandingPad < Sinatra::Base
     conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
     db = conn.db(uri.path.gsub(/^\//, ''))
     $collection = db.collection("contacts")
-
-    $log.level = Logger::DEBUG
   end
 
   helpers do
@@ -49,7 +47,6 @@ class LandingPad < Sinatra::Base
 
   post '/subscribe' do
     content_type :json
-    begin
     contact = params[:email]
     contact_type = contact.start_with?("@") ||
                   !contact.include?("@") ? "Twitter" : "Email"
@@ -63,8 +60,5 @@ class LandingPad < Sinatra::Base
    
     $collection.insert(doc)
       {"success" => true, "type" => contact_type}.to_json
-    end
-    rescue => error
-     $log.debug error.inspect
     end
 end
