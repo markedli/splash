@@ -1,0 +1,24 @@
+html, body {height:100%;padding:0;margin:0}
+body{font-family:Lato, sans-serif;font-weight:300;font-size:1.1em;color:#7b7b7b}
+h1{font-family:Lato, sans-serif;font-weight:300;font-size:1.1em;color:#7b7b7b;display:inline}
+h2{font-family:Lato, sans-serif;font-weight:400;font-size:1.1em;color:#f0a900;display:inline}
+h3{font-family:Lato, sans-serif;font-weight:400;font-size:1.1em;color:#74a300;display:inline}
+h4{font-family:Lato, sans-serif;font-weight:300;font-size:14px;color:#fefefe;display:inline}
+#floater{height:50%;margin-bottom:-140px;width:1%;float:left;}
+.container1{clear:both;height:380px;width:940px;position:relative;zoom:1;margin:0 auto 0 auto}
+.container2{clear:both;height:280px}
+#container-bottom{height:150px;background-color:#fefefe}
+.row,.span2,.span12,#container-top{height:130px}
+.span12{background-color:#fefefe}
+form{margin-bottom:0;position:relative}
+#form-div{position:relative;margin-top:20px;right:-100px;overflow-x:hidden;}
+#signup .holder{margin-bottom:0;display:inline}
+#signup .textinput{font-family:Lato, sans-serif;font-weight:300;font-size:18px;width:250px;color:#74a300;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin:2px;padding:5px;position:relative;top:1px;}
+#signup .formhint{color:#74a300}
+#signup .submit{font-family:Lato, sans-serif;font-weight:300;font-size:16px;background:url(images/button.png) bottom repeat-x #fbc649;text-align:center;color:#fefefe;text-decoration:none;-webkit-border-radius:5px;width:auto;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;text-shadow:rgba(0,0,0,.2) 0 1px 0;border-top:solid 1px #fee098;border-left:solid 1px #fee098;border-bottom:inset 1px #d56e00;border-right:inset 1px #d56e00;display:inline;padding:5px}
+#signup .submit:hover{text-shadow:rgba(0,0,0,.2) 0 -1px 0;background:url(images/button2.png) bottom repeat-x #f09300;border-bottom:inset 1px #fee098;border-right:inset 1px #fee098;border-top:solid 1px #d56e00;border-left:solid 1px #d56e00}
+.icon{margin-left:20px;display:inline}
+#icons{position:relative;float:right;margin-right:20px}
+input:focus,textarea:focus{outline:0;-webkit-box-shadow:inset 0 0 0 rgba(0,0,0,0),0 0 0 rgba(0,0,0,0);-moz-box-shadow:inset 0 0 0 rgba(0,0,0,0),0 0 0 rgba(0,0,0,0);box-shadow:inset 0 0 0 rgba(0,0,0,0),0 0 0 rgba(0,0,0,0);border-color:rgba(0,0,0,0)}
+.logo{position:relative;left:-104px}
+.banner{float:right;position:relative;top:-2px;right:-2px}
