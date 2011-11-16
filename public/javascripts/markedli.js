@@ -17,6 +17,11 @@ $(document).ready(function(){
 		}
 	});
 
+/*	$('INPUT.formhint, TEXTAREA.formhint').each(function(){
+		if($(this).attr('title') == ''){ return; }
+		if($(this).val() == ''){ $(this).val($(this).attr('title')); }
+		else { $(this).removeClass('formhint'); }
+	});*/
 	/* clear the form of default text on submit */
 	$('form').submit(function(){
 		$('.formhint').each(function(){
@@ -25,9 +30,9 @@ $(document).ready(function(){
 			}
 		});
 	});
-	
+
 /* signup form stuff */
-	$(".submit").click(function(e){
+      $(".submit").click(function(e){
       var that = $(this);
       e.preventDefault();
 
