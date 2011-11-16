@@ -54,7 +54,7 @@ $(document).ready(function(){
           $("<div id=\"thanks\" class=\"twelvecol centered\">Thanks! We'll update you through " + 
             data.type + "!</div>")
               .hide()
-              .appendTo('.container2')
+              .replace('#form-div h4')
               .slideDown('fast');
 
           $('.textinput').attr('disabled', true);
@@ -63,7 +63,7 @@ $(document).ready(function(){
         error: function(data){
           $("<div id=\"yikes\" class=\"twelvecol centered\">Yikes! Something messed up, try again.</div>")
               .hide()
-              .appendTo('.container2')
+              .replace('#form-div h4')
               .slideDown('fast');
         },
       });
