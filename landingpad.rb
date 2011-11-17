@@ -14,11 +14,17 @@ class LandingPad < Sinatra::Base
     $admin_acct_name = ENV['ADMIN_LOGIN']
     $admin_acct_passwd = ENV['ADMIN_PASS']
     
-    # Database settings - do NOT change these
-    uri = URI.parse(ENV['MONGOHQ_URL'])
-    conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-    db = conn.db(uri.path.gsub(/^\//, ''))
+    if ENV['MONGOHQ_URL'].nil?
+      conn = Mongo::Connection.from_uri("mongodb://localhost:27017")
+      db = conn.db("markedli-splash")
+    else
+      # Database settings - do NOT change these
+      uri = URI.parse(ENV['MONGOHQ_URL'])
+      conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
+      db = conn.db(uri.path.gsub(/^\//, ''))
+    end
     $collection = db.collection("contacts")
+    puts "FOUND COLLECTION ASSHOLE"
   end
 
   helpers do
