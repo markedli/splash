@@ -48,22 +48,22 @@ $(document).ready(function(){
       $.ajax({
         type: 'post',
         url: '/subscribe',
-        data: $('#form-signup').serialize(),
+        data: $('#signup').serialize(),
         datatype: 'json',
         success: function(data){
-          $("<div id=\"thanks\" class=\"twelvecol centered\">Thanks! We'll update you through " + 
+          $("<div id=\"thanks\">Thanks! We'll update you through " + 
             data.type + "!</div>")
               .hide()
-              .appendTo('.signup')
+              .appendTo('h4')
               .slideDown('fast');
 
           $('.textinput').attr('disabled', true);
           $('#signup').attr('submitted', true);
         },
         error: function(data){
-          $("<div id=\"yikes\" class=\"twelvecol centered\">Yikes! Something messed up, try again.</div>")
+          $("<div id=\"yikes\">Yikes! Something messed up, try again.</div>")
               .hide()
-              .appendTo('.signup')
+              .appendTo('h4')
               .slideDown('fast');
         },
       });

@@ -24,7 +24,6 @@ class LandingPad < Sinatra::Base
       db = conn.db(uri.path.gsub(/^\//, ''))
     end
     $collection = db.collection("contacts")
-    puts "FOUND COLLECTION ASSHOLE"
   end
 
   helpers do
@@ -54,6 +53,7 @@ class LandingPad < Sinatra::Base
   post '/subscribe' do
     content_type :json
     contact = params[:email]
+    throw Error if contact.include?("you@domain.com")
     contact_type = contact.start_with?("@") ||
                   !contact.include?("@") ? "Twitter" : "Email"
 
