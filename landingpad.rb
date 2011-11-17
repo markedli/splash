@@ -52,6 +52,7 @@ class LandingPad < Sinatra::Base
                   !contact.include?("@") ? "Twitter" : "Email"
 
     doc = {
+      "name"    => params[:name],
       "contact" => contact,
       "type"    => contact_type,
       "referer" => request.referer,

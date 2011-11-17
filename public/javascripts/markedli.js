@@ -48,13 +48,13 @@ $(document).ready(function(){
       $.ajax({
         type: 'post',
         url: '/subscribe',
-        data: $('#signup').serialize(),
+        data: $('#form-signup').serialize(),
         datatype: 'json',
         success: function(data){
           $("<div id=\"thanks\" class=\"twelvecol centered\">Thanks! We'll update you through " + 
             data.type + "!</div>")
               .hide()
-              .replaceWith('#form-div h4')
+              .appendTo('.signup')
               .slideDown('fast');
 
           $('.textinput').attr('disabled', true);
@@ -63,7 +63,7 @@ $(document).ready(function(){
         error: function(data){
           $("<div id=\"yikes\" class=\"twelvecol centered\">Yikes! Something messed up, try again.</div>")
               .hide()
-              .replaceWith('#form-div h4')
+              .appendTo('.signup')
               .slideDown('fast');
         },
       });
