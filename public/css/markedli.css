@@ -1,9 +1,9 @@
 html, body {height:100%;padding:0;margin:0}
 body{font-family:Lato, sans-serif;font-weight:300;font-size:1.1em;color:#7b7b7b}
 h1{font-family:Lato, sans-serif;font-weight:300;font-size:1.1em;color:#7b7b7b;display:inline}
-h2{font-family:Lato, sans-serif;font-weight:400;font-size:1.1em;color:#f0a900;display:inline}
 h3{font-family:Lato, sans-serif;font-weight:400;font-size:1.1em;color:#74a300;display:inline}
 h4{font-family:Lato, sans-serif;font-weight:300;font-size:14px;color:#fefefe;display:inline}
+.orange{font-family:Lato, sans-serif;font-weight:400;font-size:1.1em;color:#f0a900;display:inline}
 #floater{height:50%;margin-bottom:-140px;width:1%;float:left;}
 .container1{clear:both;height:380px;width:940px;position:relative;zoom:1;margin:0 auto 0 auto}
 .container2{clear:both;height:280px}
